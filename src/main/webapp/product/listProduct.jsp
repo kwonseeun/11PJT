@@ -21,19 +21,22 @@ function fncGetProductList(currentPage){
 
 $(function() {
 	 
-	//==> 검색 Event 연결처리부분
-	//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-	//==> 1 과 3 방법 조합 : $("tagName.className:filter함수") 사용함. 
-	 $( "td.ct_btn01:contains('검색')" ).on("click" , function() {
-		//Debug..
-		//alert(  $( "td.ct_btn01:contains('검색')" ).html() );
-		fncGetProductList(1);
-	});
+});
+
+
+//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+$( "td:nth-child(2)" ).on("click" , function() {
+	 self.location ="/product/getProduct?prodNo="+$(this).text().trim();
+});
+			
+$( "td:nth-child(2)" ).css("color" , "red");
+
+});	
 	
 	
-	//==> userId LINK Event 연결처리
-	//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-	//==> 3 과 1 방법 조합 : $(".className tagName:filter함수") 사용함.
+	
+	$(function() {
+	
 	$( ".ct_list_pop td:nth-child(3)" ).on("click" , function() {
 			
 			var prodNo = $(this).children().val().trim();
@@ -82,61 +85,53 @@ $(function() {
 
 </head>
 
-<body bgcolor="#ffffff" text="#000000">
+<body >
 
-<div style="width:98%; margin-left:10px;">
 
-<form name="detailForm">
+<jsp:include page="/layout/toolbar.jsp" />
 
-<table width="100%" height="37" border="0" cellpadding="0"	cellspacing="0">
-	<tr>
-		<td width="15" height="37">
-			<img src="/images/ct_ttl_img01.gif" width="15" height="37">
-		</td>
-		<td background="/images/ct_ttl_img02.gif" width="100%" style="padding-left:10px;">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td width="93%" class="ct_ttl01">${param.menu=='manage'?"상품관리":"상품목록 조회"}</td>
-				</tr>
-			</table>
-		</td>
-		<td width="12" height="37">
-			<img src="/images/ct_ttl_img03.gif" width="12" height="37">
-		</td>
-	</tr>
-</table>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
-	<tr>
-		<td align="right">
+<!--  화면구성 div Start /////////////////////////////////////-->
+<div class="container">
+	
+			<div class="page-header text-info">
+	       <h3>상품목록조회</h3>
+	    </div>
+	
+ 		<div class="row">
+	    
+		    <div class="col-md-6 text-left">
+		    	<p class="text-defualt">
+		    		전체  ${resultPage.totalCount } 건수, 현재 ${resultPage.currentPage}  페이지
+		    	</p>
+		    </div>
+		    
+		    <div class="col-md-6 text-right">
+			    <form class="form-inline" name="detailForm">
+
+		<div class="form-group">
 			<select name="searchCondition" class="ct_input_g" style="width:80px">
 				<option value="0" ${!empty search.searchCondition && search.searchCondition==0?"selected":""}>상품번호</option>
 				<option value="1" ${!empty search.searchCondition && search.searchCondition==1?"selected":""}>상품명</option>
 				<option value="2" ${!empty search.searchCondition && search.searchCondition==2?"selected":""}>가격</option>
 			</select>
-			<input 	type="text" name="searchKeyword"  value="${search.searchKeyword}" 
-							class="ct_input_g" style="width:200px; height:19px" >
-		</td>
-
-		<td align="right" width="70">
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td width="17" height="23">
-						<img src="/images/ct_btnbg01.gif" width="17" height="23">
-					</td>
-					
-					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						<!-- <a href="javascript:fncGetProductList('1');">검색</a>-->
-						검색
-					</td>
-					<td width="14" height="23">
-						<img src="/images/ct_btnbg03.gif" width="14" height="23">
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
+		</div>	
+			 
+				  <div class="form-group">
+				    <label class="sr-only" for="searchKeyword">검색어</label>
+				    <input type="text" class="form-control" id="searchKeyword" name="searchKeyword"  placeholder="검색어"
+				    			 value="${! empty search.searchKeyword ? search.searchKeyword : '' }"  >
+				  </div>
+				  
+				  <button type="button" class="btn btn-default">검색</button>
+				  
+				  <!-- PageNavigation 선택 페이지 값을 보내는 부분 -->
+				  <input type="hidden" id="currentPage" name="currentPage" value=""/>
+				  
+				</form>
+	    	</div>
+	    	
+		</div>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 	<tr>
@@ -219,7 +214,7 @@ $(function() {
 		<td align="center">
 			<input type="hidden" id="currentPage" name="currentPage" value=""/>
 			
-				<jsp:include page="../common/ProductpageNavigator.jsp"/>
+				<jsp:include page="../common/ProductpageNavigator.jsp"/> 
     	</td>
 	</tr>
 </table>

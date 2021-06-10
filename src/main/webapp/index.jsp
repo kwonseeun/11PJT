@@ -23,13 +23,63 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<!--  ///////////////////////// Bootstrap, jQuery CDN ////////////////////////// -->
+	<link rel="stylesheet" href="/css/background.css" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	
 	<!--  ///////////////////////// CSS ////////////////////////// -->
-	<style></style>
+	<style>
+		.jumbotron {
+	    margin-bottom: 0px;
+	    background-image: url('image/111.jpg');
+	    background-position: 0% 25%;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    color: black;
+	    text-shadow: black 0.2em 0.2em 0.3em;
+	    text-align:center;
+	}
+
+
+	.list-group-item {
+	background-color: #d7d5d5;
+	}
+	
+	
+		
+	body{
+		background-color:#9F9E9A;
+	
+	}
+	        a:hover, a:focus { 
+
+    animation-duration: 3s; 
+
+    animation-name: rainbowLink; 
+    animation-iteration-count: infinite; 
+
+} 
+	@keyframes rainbowLink {     
+
+    0% { color: #ff2a2a; }
+
+    15% { color: #ff7a2a; }
+
+    30% { color: #ffc52a; }
+
+    45% { color: #43ff2a; }
+
+    60% { color: #2a89ff; }
+
+    75% { color: #202082; }
+
+    90% { color: #6b2aff; } 
+
+   100% { color: #e82aff; }
+   
+	</style>
    	
    	<!--  ///////////////////////// JavaScript ////////////////////////// -->
 	<script type="text/javascript">
@@ -49,6 +99,18 @@
 				self.location = "/user/login"
 			});
 		});
+		
+		
+		!function ($){
+			/*=============
+			캐러젤 슬라이더
+			*===============*/
+			$(function () {
+				$('.carousel').carousel({
+					interval:2000
+				});
+			});
+		}(window.jQuery);
 		
 	</script>	
 	
@@ -85,7 +147,7 @@
    	</div>
    	<!-- ToolBar End /////////////////////////////////////-->
    	
-	<!--  화면구성 div Start /////////////////////////////////////-->
+	<!--  화면구성 div Start /////////////////////////ju////////////-->
 	<div class="container">
 		
 		<!-- 다단레이아웃  Start /////////////////////////////////////-->
@@ -95,9 +157,9 @@
 			<div class="col-md-3">
 		        
 		       	<!--  회원관리 목록에 제목 -->
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">
-						<i class="glyphicon glyphicon-heart"></i> 회원관리
+						<i class="glyphicon glyphicon-user"></i> 회원관리
          			</div>
          			<!--  회원관리 아이템 -->
 					<ul class="list-group">
@@ -111,7 +173,7 @@
 		        </div>
                
                
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">
 							<i class="glyphicon glyphicon-briefcase"></i> 판매상품관리
          			</div>
@@ -126,7 +188,7 @@
 		        </div>
                
                
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">
 							<i class="glyphicon glyphicon-shopping-cart"></i> 상품구매
 	    			</div>
@@ -145,28 +207,28 @@
 			<!--  Menu 구성 end /////////////////////////////////////-->   
 
 	 	 	<!--  Main start /////////////////////////////////////-->   		
-	 	 	<div class="col-md-9">
-				<div class="jumbotron">
-			  		<h1>Model2 MVC Shop</h1>
-			  		<p>로그인 후 사용가능...</p>
-			  		<p>로그인 전 검색만 가능합니다.</p>
-			  		<p>회원가입 하세요.</p>
-			  		
-			  		<div class="text-center">
-			  			<a class="btn btn-info btn-lg" href="#" role="button">회원가입</a>
-			  			<a class="btn btn-info btn-lg" href="#" role="button">로 그 인</a>
-			  		</div>
-			  	
-			  	</div>
-	        </div>
-	   	 	<!--  Main end /////////////////////////////////////-->   		
-	 	 	
-		</div>
-		<!-- 다단레이아웃  end /////////////////////////////////////-->
-		
-	</div>
+			
+					<div class="row">		
+					<img src="/images/151.jfif" width="860" height="455"> 		
+			  		</div>        
+			</div>
 	<!--  화면구성 div end /////////////////////////////////////-->
-
+<div class="frame">
+  <!-- //header -->
+  <div class="container">
+    <!-- //nav -->
+    <div class="content">
+      <h1>Hello World</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nam error ipsa commodi exercitationem fugiat praesentium tempore inventore voluptate dolore. Ipsa quisquam nemo enim explicabo aut accusantium ex ab perspiciatis.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nam error ipsa commodi exercitationem fugiat praesentium tempore inventore voluptate dolore. Ipsa quisquam nemo enim explicabo aut accusantium ex ab perspiciatis.
+      </p>
+    </div>
+  </div>
+  <!-- //container -->
+  <div class="footer">
 </body>
 
 </html>

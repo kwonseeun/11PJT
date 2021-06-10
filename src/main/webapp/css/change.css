@@ -1,0 +1,15 @@
+#content{
+	padding: 30px;
+	text-align: center;
+}
+#bigImages{
+	margin-bottom: 10px;
+}
+#big{
+	width: 310px;
+	height: 310px;
+}
+.small{
+	width: 100px;
+	height: 100px;
+}

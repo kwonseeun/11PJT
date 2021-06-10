@@ -7,6 +7,9 @@
 <title>상품정보수정</title>
 
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
+<link rel="stylesheet" href="/css/background.css" >
+
+
 
 <script type="text/javascript" src="../javascript/calendar.js">
 </script>

@@ -56,6 +56,10 @@
 		                         <span class="caret"></span>
 		                     </a>
 		                     <ul class="dropdown-menu">
+		                     	<a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		                         <span >판매상품관리</span>
+		                         <span class="caret"></span>
+		                        </a> 
 		                         <li><a href="#">판매상품등록</a></li>
 		                         <li><a href="#">판매상품관리</a></li>
 		                         <li class="divider"></li>
@@ -124,4 +128,15 @@
 			$(self.location).attr("href","/user/getUser?userId=${sessionScope.user.userId}");
 		});
 		
+		//============= 판매상품등록관리 Event 처리================
+		$( "a:contains('판매상품등록')" ).on("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			$(self.location).attr("href","/product/getProduct?prodNo=${sessionScope.product.prodNo}");
+		});
+			
+		//============= 판매상품등록관리 Event 처리================
+		$( "a:contains('판매상품관리')" ).on("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			$(self.location).attr("href","/product/listProduct?prodNo=${sessionScope.product.prodNo}");
+		});
 	</script>  

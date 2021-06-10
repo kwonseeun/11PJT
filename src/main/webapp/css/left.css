@@ -25,7 +25,7 @@ A.: { onfocus : "this.blur();" }
 
 /* 전체 텍스트 속성 */
 BODY, TABLE, TR, TD, SELECT,INPUT,DIV,SPAN,FORM,TEXTAREA
-{ font-family: "MS Gothic"; font-size: 12px; color: #333333; }
+{ font-family: "MS Gothic"; font-size: 12px; color: #E4B82C; }
 
 /* 타이틀1 배경이미지와 텍스트 속성 */
  .Depth01 { 
